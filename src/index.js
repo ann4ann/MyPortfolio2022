@@ -1,7 +1,12 @@
 import "normalize.css";
 import "./styles/scss/index.scss";
-// Диплом
 
+// Диплом
+import DIPLOM_1 from "../assets/img/TaskTracker/taskTracker01.png";
+import DIPLOM_2 from "../assets/img/TaskTracker/taskTracker02.png";
+import DIPLOM_3 from "../assets/img/TaskTracker/taskTracker03.png";
+import DIPLOM_4 from "../assets/img/TaskTracker/taskTracker04.png";
+import DIPLOM_5 from "../assets/img/TaskTracker/taskTracker05.png";
 // Хакатон 2
 import HACK_2_1 from "../assets/img/Hackathon2/Hackathon2_01.png";
 import HACK_2_2 from "../assets/img/Hackathon2/Hackathon2_02.png";
@@ -15,26 +20,23 @@ import CLERKSY_1 from "../assets/img/Clerksy/Clerksy01.png";
 import CLERKSY_2 from "../assets/img/Clerksy/Clerksy02.png";
 import CLERKSY_3 from "../assets/img/Clerksy/Clerksy03.png";
 import CLERKSY_4 from "../assets/img/Clerksy/Clerksy04.png";
-import BG from "../assets/img/bg.jpg";
-import PHOTO from "../assets/img/photo.jpg";
-import HACK_2 from "../assets/img/Hackathon1.png";
 
 const portfolioData = [
   {
     id: "01",
     title: "Диплом",
-    description: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-diplom",
     // заменить картинки
-    img: [HACK_2_1, HACK_2_2, HACK_2_3],
+    img: [DIPLOM_1, DIPLOM_2, DIPLOM_3, DIPLOM_4, DIPLOM_5],
     gitRepo: "https://github.com/ann4ann/Task-Tracker",
   },
   {
     id: "02",
     title: "Хакатон 2",
-    description: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-hackathon2",
@@ -44,7 +46,7 @@ const portfolioData = [
   {
     id: "03",
     title: "Хакатон 1",
-    description: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-hackathon1",
@@ -54,7 +56,7 @@ const portfolioData = [
   {
     id: "04",
     title: "Верстка сайта магазина",
-    description: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-clerksy",
@@ -63,7 +65,7 @@ const portfolioData = [
   },
 ];
 
-function addPortfolioCard(container, id, title, description, imgName, img) {
+function addPortfolioCard(container, id, title, stack, imgName, img) {
   const card = document.createElement("div");
   card.classList.add("card", "tab-cards__item");
   card.dataset.cardId = id;
@@ -88,11 +90,11 @@ function addPortfolioCard(container, id, title, description, imgName, img) {
   const cardTitle = document.createElement("div");
   cardTitle.className = "subtitle";
   cardTitle.innerText = title;
-  const cardDescription = document.createElement("div");
-  cardDescription.className = "text";
-  cardDescription.innerText = description;
+  const cardStack = document.createElement("div");
+  cardStack.className = "text";
+  cardStack.innerText = stack;
   wrapper.append(cardTitle);
-  wrapper.append(cardDescription);
+  wrapper.append(cardStack);
 
   const btn = document.createElement("button");
   btn.className = "button-main";
@@ -194,7 +196,7 @@ portfolioData.forEach((item) => {
     cardWrapper,
     item.id,
     item.title,
-    item.description,
+    item.stack,
     item.imgName,
     item.img
   );
@@ -209,9 +211,10 @@ portfolioTab.addEventListener("click", (event) => {
   if (openCardBtn) {
     const openCardId = target.closest(".card").dataset.cardId;
     _createModal(openCardId);
-
+    
     // кнопки для слайдера
     const slideBar = document.querySelector(".slidebar");
+    const slides = slideBar.querySelector(".slidebar__slides");
     const upBtn = slideBar.querySelector(".up-button");
     const downBtn = slideBar.querySelector(".down-button");
     const slideCount = slideBar.querySelectorAll(".slidebar__img").length;
@@ -246,9 +249,12 @@ portfolioTab.addEventListener("click", (event) => {
       }
 
       // пересмотреть трансформацию, +active!!!!!!!!!!!!!!!!!
-      slideBar.style.transform = `translateY(${
-        activeSlideIndex * currentImageHeight + 30
+      slides.style.transform = `translateY(${
+        activeSlideIndex * (currentImageHeight + 30)
       }px)`;
+      // slideBar.style.transform = `translateY(-${
+      //   activeSlideIndex * 500
+      // }px)`;
     }
 
     // реализация закрытия модального окна

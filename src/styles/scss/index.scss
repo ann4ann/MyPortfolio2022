@@ -9,6 +9,7 @@ $text-dark: #282828;
 $card: #f7f3e4;
 $card-active: #eedddf;
 
+
 @mixin font-Nunito {
   font-family: "Nunito", sans-serif;
   color: $text-dark;
@@ -215,12 +216,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  
   &__slides {
-    max-width: 100%;
-    max-height: 100%;
+    // max-width: 100%;
     position: absolute;
     overflow: hidden;
+    height: 100%;
+    box-sizing: border-box;
     // top: 100;
   }
 
