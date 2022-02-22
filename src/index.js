@@ -173,7 +173,7 @@ function _createModal(id) {
 function createImgsHtml(imageArr) {
   let imagesHtml = "";
   // let imagesHtml = `<img class="slidebar__img active" src=${imageArr[0]}></img>`;
-  
+
   imageArr.forEach((item, index) => {
     imagesHtml += `\n<img class="slidebar__img" src=${item}></img>`;
     // if (index) {
@@ -214,11 +214,11 @@ portfolioTab.addEventListener("click", (event) => {
   if (openCardBtn) {
     const openCardId = target.closest(".card").dataset.cardId;
     _createModal(openCardId);
-    
+
     // кнопки для слайдера
     const slideBar = document.querySelector(".slidebar");
     const slides = slideBar.querySelector(".slidebar__slides");
-    
+
     const upBtn = slideBar.querySelector(".up-button");
     const downBtn = slideBar.querySelector(".down-button");
     const slideCount = slideBar.querySelectorAll(".slidebar__img").length;
@@ -230,11 +230,11 @@ portfolioTab.addEventListener("click", (event) => {
     downBtn.addEventListener("click", () => {
       changeSlide("down");
     });
-    
-    const slideImg = slideBar.querySelector(".slidebar__img")
+
+    const slideImg = slideBar.querySelector(".slidebar__img");
     const slideHeight = slideImg.clientHeight;
     console.log(slideHeight);
-    
+
     function changeSlide(direction) {
       if (direction === "down") {
         console.log("down");
@@ -254,7 +254,7 @@ portfolioTab.addEventListener("click", (event) => {
 
       // пересмотреть трансформацию, +active!!!!!!!!!!!!!!!!!
       slides.style.transform = `translateY(-${
-        activeSlideIndex * (slideHeight)
+        activeSlideIndex * slideHeight
       }px)`;
       // slideBar.style.transform = `translateY(-${
       //   activeSlideIndex * 500
