@@ -9,7 +9,6 @@ $text-dark: #282828;
 $card: #f7f3e4;
 $card-active: #eedddf;
 
-
 @mixin font-Nunito {
   font-family: "Nunito", sans-serif;
   color: $text-dark;
@@ -198,8 +197,9 @@ body {
   flex-direction: column;
   padding-top: 15px;
   background-color: $bg-accent;
+  width: 100%;
+  height: 100%;
 
-  // slide - обертка, внутри img -s
   &__slidebar {
     width: 100%;
     height: 100%;
@@ -212,22 +212,25 @@ body {
 
 .slidebar {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
   &__slides {
     // max-width: 100%;
     position: absolute;
     overflow: hidden;
     height: 100%;
     box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
     // top: 100;
   }
 
   &__img {
     max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
     margin-bottom: 30px;
     opacity: 0.3;
 
@@ -238,14 +241,17 @@ body {
 
   &__btns {
     height: 100%;
+    width: 100%;
     padding: 10px;
-    // box-sizing: border-box;
+    // position: absolute;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     button {
       z-index: 1000;
+      width: 70px;
       background: linear-gradient(to bottom, $yellow 10%, $red 60%, $red);
       background-size: 100% 200%;
       background-position: 0 100%;

@@ -228,10 +228,8 @@ portfolioTab.addEventListener("click", (event) => {
     });
 
     function changeSlide(direction) {
-      const currentImage = slideBar.querySelector(".slidebar__img.active");
-      console.log(currentImage);
-      const currentImageHeight = currentImage.clientHeight;
-      console.log(currentImageHeight);
+      const slideBarHeight = slideBar.clientHeight;
+      console.log(slideBarHeight);
       if (direction === "down") {
         console.log("down");
         activeSlideIndex++;
@@ -249,8 +247,8 @@ portfolioTab.addEventListener("click", (event) => {
       }
 
       // пересмотреть трансформацию, +active!!!!!!!!!!!!!!!!!
-      slides.style.transform = `translateY(${
-        activeSlideIndex * (currentImageHeight + 30)
+      slides.style.transform = `translateY(-${
+        activeSlideIndex * slideBarHeight
       }px)`;
       // slideBar.style.transform = `translateY(-${
       //   activeSlideIndex * 500
