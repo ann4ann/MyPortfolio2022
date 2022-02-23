@@ -1,6 +1,9 @@
 import "normalize.css";
 import "./styles/scss/index.scss";
 
+const spanColors = ["#C6D4BE", "#a6a1cc", "#B2C9A5", "#E5D1BD", 
+                    "#AAB5B8", "#bebad1", "#b5cacf", "#b6b3c9"]
+
 // Диплом
 import DIPLOM_1 from "../assets/img/TaskTracker/taskTracker01.png";
 import DIPLOM_2 from "../assets/img/TaskTracker/taskTracker02.png";
@@ -21,11 +24,16 @@ import CLERKSY_2 from "../assets/img/Clerksy/Clerksy02.png";
 import CLERKSY_3 from "../assets/img/Clerksy/Clerksy03.png";
 import CLERKSY_4 from "../assets/img/Clerksy/Clerksy04.png";
 
+function getRandomColor(colors) {
+  const index = Math.floor(Math.random() * colors.length)
+  return colors[index]
+}
+
 const portfolioData = [
   {
     id: "01",
     title: "Диплом",
-    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: ["React", "React Router", "Bootstrap5"],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-diplom",
@@ -36,7 +44,7 @@ const portfolioData = [
   {
     id: "02",
     title: "Хакатон 2",
-    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: ["React", "React Router", "Работа в команде", "Teamlead", "Bootstrap5"],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-hackathon2",
@@ -46,7 +54,7 @@ const portfolioData = [
   {
     id: "03",
     title: "Хакатон 1",
-    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: ["JavaScript", "Native JS", "Работа в команде"],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-hackathon1",
@@ -56,7 +64,7 @@ const portfolioData = [
   {
     id: "04",
     title: "Верстка сайта магазина",
-    stack: "Делала ывдало двлыао чсмор ывало рд ывп оалдлыар",
+    stack: ["HTML5", "SCSS", "Gulp"],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-clerksy",
@@ -73,7 +81,7 @@ function addPortfolioCard(container, id, title, stack, imgName, img) {
   const helper = document.createElement("span");
   helper.className = "card__helper";
   const imageContainer = document.createElement("div");
-  imageContainer.classList.add("card-img", imgName);
+  imageContainer.classList.add("card__img", imgName);
 
   const image = document.createElement("img");
   image.style.maxWidth = "100%";
@@ -85,14 +93,17 @@ function addPortfolioCard(container, id, title, stack, imgName, img) {
   cardContent.className = "card__content";
 
   const wrapper = document.createElement("div");
-  wrapper.className = "wrapper";
+  wrapper.classList.add("wrapper", "content");
+  // wrapper.className = "wrapper";
 
   const cardTitle = document.createElement("div");
-  cardTitle.className = "subtitle";
+  cardTitle.className = "content__subtitle";
   cardTitle.innerText = title;
   const cardStack = document.createElement("div");
-  cardStack.className = "text";
-  cardStack.innerText = stack;
+  cardStack.className = "content__text";
+  let stackHtml = ""
+  stack.forEach(item => stackHtml += `<span style="background-color:${getRandomColor(spanColors)}">${item}</span>`)
+  cardStack.innerHTML = stackHtml;
   wrapper.append(cardTitle);
   wrapper.append(cardStack);
 
@@ -164,7 +175,7 @@ function _createModal(id) {
         <div class="modal-body__text">${currentCardData.content}</div>
       </div>
       <div class="modal-window__footer modal-footer">Посмотреть проект на github: 
-        <a href=${currentCardData.gitRepo} target="_blank">Перейти</a>
+        <a href=${currentCardData.gitRepo} target="_blank">Открыть</a>
       </div>
     </div>`;
   container.append(modal);
@@ -172,13 +183,8 @@ function _createModal(id) {
 // создать html картинок для модального окна
 function createImgsHtml(imageArr) {
   let imagesHtml = "";
-  // let imagesHtml = `<img class="slidebar__img active" src=${imageArr[0]}></img>`;
-
-  imageArr.forEach((item, index) => {
-    imagesHtml += `\n<img class="slidebar__img" src=${item}></img>`;
-    // if (index) {
-    //   imagesHtml += `\n<img class="slidebar__img" src=${item}></img>`;
-    // }
+  imageArr.forEach((item) => {
+    imagesHtml += `\n<div class="slidebar__img"><img src=${item}></img></div>`;
   });
   return imagesHtml;
 }

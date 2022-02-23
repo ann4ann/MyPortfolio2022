@@ -4,10 +4,13 @@ $bg: #dcdcdc;
 $white: #ffffff;
 $yellow: #ffff8a;
 $red: #ff6767;
+$dark-red: #bd5e52;
 $text-accent: #474b4e;
 $text-dark: #282828;
 $card: #f7f3e4;
 $card-active: #eedddf;
+
+$testColorDelete: #bebad1;
 
 @mixin font-Nunito {
   font-family: "Nunito", sans-serif;
@@ -68,10 +71,8 @@ body {
 }
 
 .tabs__content {
-  // max-width: 100%;
   display: flex;
   justify-content: center;
-  // max-width: 1000px;
 
   .tab {
     display: none;
@@ -91,7 +92,6 @@ body {
 
 .tab-1 {
   max-width: 600px;
-  // border: 1px solid $text-accent;
 
   &__subtitle {
     @include font-Oswald;
@@ -104,6 +104,21 @@ body {
 
     &::first-letter {
       font-size: 21px;
+    }
+  }
+
+  &__link {
+    @include font-Oswald();
+    text-align: center;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: $dark-red;
+      }
     }
   }
 }
@@ -146,9 +161,6 @@ body {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
 
-  // opacity: 0;
-  // pointer-events: none;
-
   // !!!!!! ИЗМЕНИТЬ ВРЕМЯ
   // не работает
   transition: 5s all;
@@ -172,6 +184,17 @@ body {
       height: 100%;
     }
     &__footer {
+      a {
+        @include font-Oswald();
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.3s ease-in;
+
+        &:hover {
+          color: $dark-red;
+        }
+      }
     }
   }
 }
@@ -195,7 +218,6 @@ body {
 .modal-body {
   display: flex;
   flex-direction: column;
-  // padding-top: 15px;
   background-color: $bg-accent;
   width: 100%;
   height: 100%;
@@ -224,22 +246,23 @@ body {
     width: 100%;
     height: 100%;
     transition: all 0.5s ease-in-out;
-    // top: 100;
   }
 
   &__img {
     box-sizing: border-box;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
     margin: 0 auto;
-    max-height: 100%;
     padding: 5px;
-    // margin-bottom: 30px;
-    // opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    // &.active {
-    //   opacity: 1;
-    // }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   &__btns {
@@ -284,99 +307,6 @@ body {
     margin-left: 20px;
   }
 }
-
-// .tab-2__modal.open .modal-overlay,
-// .tab-2__modal.open .modal-window {
-//   opacity: 1;
-//   z-index: 100;
-// }
-
-// .tab-2__modal.open .modal-window {
-//   transform: translateY(100px);
-// }
-
-// .tab-2__modal.open .modal-overlay {
-//   background-color: rgba(0, 0, 0, 0.5);
-// }
-
-// .tab-2__modal.hiding .modal-overlay,
-// .tab-2__modal.hiding .modal-window {
-//   opacity: 1;
-//   z-index: 100;
-// }
-// //
-// .tab-2__modal.hiding .modal-window {
-//   transform: translateY(-200px);
-// }
-
-// .tab-2__modal.hiding .modal-overlay {
-//   background-color: rgba(0, 0, 0, 0);
-// }
-
-// .modal-window,
-// .modal-overlay {
-//   opacity: 0;
-//   z-index: -10;
-// }
-
-// .modal-overlay {
-//   position: fixed;
-//   top: 0px;
-//   right: 0px;
-//   left: 0px;
-//   bottom: 0px;
-//   background-color: rgba(0, 0, 0, 0);
-//   transition: background-color 0.2s ease-in;
-
-//   .modal-window {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-
-//     margin: 0 auto;
-//     transform: translateY(-200px);
-//     transition: transform 0.2s ease-in;
-//     width: 800px;
-//     height: 600px;
-//     max-width: 90vw;
-//     max-height: 90vh;
-
-//     background-color: $bg;
-//     border-radius: 5px;
-
-//     // &__body {
-//     //   height: 100%;
-//     // }
-//   }
-
-//   .modal-header {
-//     padding: 20px;
-//     display: flex;
-//     justify-content: space-between;
-//     margin-bottom: 25px;
-
-//     &__title {
-//       @include font-Oswald;
-//       font-size: 32px;
-//     }
-
-//     &__close {
-//       cursor: pointer;
-//     }
-//   }
-
-//   .modal-body {
-//     padding: 20px;
-//     height: 100%;
-//     background-color: $bg-accent;
-
-//     &__img {
-//       margin-bottom: 20px;
-//     }
-//     &__text {
-//     }
-//   }
-// }
 
 .tab-cards {
   margin: 0 -15px;
@@ -430,19 +360,6 @@ body {
     display: flex;
     justify-content: space-between;
 
-    // .wrapper {
-    // }
-
-    .subtitle {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .text {
-      margin-right: 50px;
-    }
-
     .button-main {
       font-size: 16px;
       font-weight: bold;
@@ -470,20 +387,41 @@ body {
   }
 }
 
+.content {
+  &__subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin-right: 50px;
+
+    span {
+      display: inline-block;
+      padding: 5px;
+      font-weight: bold;
+      opacity: 0.75;
+      border-radius: 7px;
+      margin: 2px;
+    }
+  }
+}
+
 .tab-3 {
   text-align: center;
 
   &__title {
     font-size: 18px;
-    margin-bottom: 15px;
   }
 }
 .section {
+  margin-top: 20px;
   &__title {
     @include font-Oswald();
     font-size: 25px;
   }
-  
+
   &__content {
     padding: 0;
   }
@@ -497,7 +435,6 @@ body {
 
     a {
       text-decoration: none;
-      transition: all 0.3s ease-out;
 
       &:hover {
         border-bottom: 1px solid transparent;
@@ -511,6 +448,7 @@ body {
 
       svg {
         stroke: $text-accent;
+        transition: stroke 0.5s ease-out;
       }
     }
   }
