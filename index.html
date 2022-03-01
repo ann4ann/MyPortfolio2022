@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ann Noskova portfolio</title>
+  <script defer src="build.js"></script></head>
+  <body>
+    <div class="header"><div class="title">Anna's portfolio</div></div>
+    <div class="wrapper">
+      <div class="tabs">
+        <div class="tabs__nav tabs-nav">
+          <div class="tabs-nav__item is-active" data-tab-name="tab-1">
+            About
+          </div>
+          <div class="tabs-nav__item" data-tab-name="tab-2">Portfolio</div>
+          <div class="tabs-nav__item" data-tab-name="tab-3">Contacts</div>
+        </div>
+        <div class="tabs__content">
+          <!-- ABOUT -->
+          <div class="tab is-active tab-1">
+            <div class="tab-1__subtitle">Меня зовут Анна Носкова.</div>
+            <p class="tab-1__text">
+              В 2020 году я занялась сферой программирования. Получила небольшой
+              опыт работы в Unreal Engine, изучила основы C++
+            </p>
+            <p class="tab-1__text">
+              С декабря 2020 года преподаю программирование для школьников, в
+              т.ч. на языке Python. Выстроила обучение самостоятельно, не имея
+              опыта программирования на Python и в педагогике, в результате
+              школьники получили навыки самостоятельно решать задачи и работать
+              в группе.
+            </p>
+            <p class="tab-1__text">
+              Участвовала в рамках курса “JavaScript Junior Frontend Developer”
+              в двух хакатонах, в том числе в одном в качестве TeamLead (проект
+              занял 3 место).
+            </p>
+            <p class="tab-1__text">
+              Ставлю своей целью работу и развитие в качестве
+              Frontend-разработчика, в команде, увлеченной своим делом и
+              развитием в нем. Своей целью в работе ставлю получение результата,
+              соответствующего требованиям.
+            </p>
+            <p class="tab-1__link">
+              <a
+                href="https://docs.google.com/document/d/1l9Js6Xm6VFiUnl_x_SKW6mOVtVVBvyS0J5pBjh5HsaQ/edit?usp=sharing"
+                target="_blank"
+                >Посмотреть резюме</a
+              >
+            </p>
+          </div>
+          <!-- PORTFOLIO -->
+          <div class="tab tab-2">
+            <div class="tab-2__subtitle">My portfolio:</div>
+            <div class="tab-2__cards tab-cards">
+              <!-- заполняется через JS -->
+            </div>
+            <div id="card-modal" class="tab-2__modal">
+              <!-- реализовано через JS -->
+            </div>
+          </div>
+          <!-- CONTACTS -->
+          <div class="tab tab-3">
+            <p class="tab-3__title">You can contact with me:</p>
+            <div class="tab-3__socials section">
+              <div class="section__title">Socials</div>
+              <ul class="section__content socials">
+                <li>
+                  <a href="https://t.me/anni_nanni" target="_blank"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-brand-telegram"
+                      width="44"
+                      height="44"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+                    </svg>Телеграм</a>
+                </li>
+                <li>
+                  <a href="https://github.com/ann4ann" target="_blank"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-brand-github"
+                      width="44"
+                      height="44"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#2c3e50"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                      />
+                      </svg>Гитхаб</a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-3__phone section">
+              <p class="section__title">Телефон</p>
+              <p class="section__content">8 (960) 453-9398</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
