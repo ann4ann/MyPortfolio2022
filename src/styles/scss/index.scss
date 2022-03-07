@@ -10,7 +10,23 @@ $text-dark: #282828;
 $card: #f7f3e4;
 $card-active: #eedddf;
 
-$testColorDelete: #bebad1;
+// $testColorDelete: #bebad1;
+
+$screen-xs: 320px;
+// Small devices (landscape phones, 576px and up)
+$screen-sm: 576px;
+$screen-sm-max: 767px;
+// Medium devices (tablets, 768px and up)
+$screen-md: 768px;
+$screen-md-max: 991px;
+// Large devices (desktops, 992px and up)
+$screen-lg: 992px;
+$screen-lg-max: 1199px;
+// X-Large devices (large desktops, 1200px and up)
+$screen-xl: 1200px;
+$screen-xl-max: 1399px;
+// XX-Large devices (larger desktops, 1400px and up)
+$screen-xxl: 1400px;
 
 @mixin font-Nunito {
   font-family: "Nunito", sans-serif;
@@ -73,11 +89,12 @@ body {
 .tabs__content {
   display: flex;
   justify-content: center;
+  padding: 15px;
 
   .tab {
     display: none;
-    margin: 30px;
-    padding: 10px;
+    // margin: 30px;
+    // padding: 10px;
 
     // border: 1px solid $bg-accent;
     // !!!!!!!!! добавить медиа-квери на md и lg
@@ -87,6 +104,10 @@ body {
 
   .tab.is-active {
     display: block;
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 30px;
   }
 }
 
@@ -125,7 +146,7 @@ body {
 
 .tab-2 {
   max-width: 1000px;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   &__subtitle {
     @include font-Oswald;
@@ -157,13 +178,18 @@ body {
   right: 0px;
   left: 0px;
   bottom: 0px;
-  padding: 30px 15px 15px;
+  // возможно, меньше на тлф
+  padding: 30px 5px 15px;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
 
   // !!!!!! ИЗМЕНИТЬ ВРЕМЯ
   // не работает
   transition: 5s all;
+
+  @media (min-width: $screen-sm ) {
+    padding: 30px 15px 15px;
+  }
 
   .modal-window {
     position: absolute;
@@ -186,7 +212,7 @@ body {
     &__footer {
       a {
         @include font-Oswald();
-        text-align: center;
+        // text-align: center;
         text-transform: uppercase;
         text-decoration: none;
         transition: color 0.3s ease-in;
@@ -221,6 +247,7 @@ body {
   background-color: $bg-accent;
   width: 100%;
   height: 100%;
+  
 
   &__slidebar {
     width: 100%;
@@ -228,7 +255,11 @@ body {
   }
 
   &__text {
-    margin: 20px;
+    margin: 10px;
+
+    @media (min-width: $screen-sm) {
+      margin: 20px;
+    }
   }
 }
 
@@ -254,10 +285,13 @@ body {
     height: 100%;
     display: block;
     margin: 0 auto;
-    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    @media (min-width: $screen-sm ) {
+      padding: 5px;
+    }
 
     img {
       max-width: 100%;
@@ -301,10 +335,20 @@ body {
 }
 
 .modal-footer {
-  padding: 20px;
+  padding: 10px;
+
+  @media (min-width: $screen-sm) {
+    padding: 20px;
+  }
 
   a {
-    margin-left: 20px;
+    display: block;
+    text-align: left;
+    
+    @media (min-width: $screen-sm) {
+      display:inline;
+      margin-left: 20px;
+    }
   }
 }
 
@@ -313,8 +357,11 @@ body {
 
   &__item {
     flex-grow: 1;
-    margin: 30px;
     max-width: 360px;
+    
+    @media (min-width: $screen-sm ) {
+      margin: 30px;
+    }
   }
 }
 
@@ -328,8 +375,11 @@ body {
   padding: 20px;
   // border-radius: 20px;
   background: linear-gradient(135deg, $white 65%, $card 95%, $card-active);
-  min-width: 300px;
-  min-height: 300px;
+  
+  @media (min-width: $screen-sm ) {
+    min-width: 300px;
+    min-height: 300px;
+  }
 
   &__helper {
     position: absolute;
