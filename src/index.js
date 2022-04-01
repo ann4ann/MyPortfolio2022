@@ -1,6 +1,6 @@
 import "normalize.css";
 import "./styles/scss/index.scss";
-import { portfolioData } from "./data/data";
+import { portfolioData, portfolioProjData } from "./data/data";
 import { addPortfolioCard } from "./components/addPortfolioCard";
 import { createModal, deleteModal } from "./components/modalWindow";
 
@@ -45,6 +45,20 @@ portfolioData.forEach((item) => {
     item.img
   );
 });
+
+// Текущий проект
+const currentProj = document.querySelector(".tab-2__currentProj");
+let currentProjStack = "";
+portfolioProjData.stack.forEach(
+  (item) =>
+    (currentProjStack += `<span style="border-radius: 5px; border: 1px solid gray; margin: 3px; padding: 3px">${item}</span>`)
+);
+currentProj.style.maxWidth = "80%";
+currentProj.style.margin = "0 auto";
+currentProj.innerHTML = `<p>Также в качестве примера моих работ можно рассматривать и этот ${portfolioProjData.title}.</p>
+  <p>В данном проекте были использованы следующие технологии: </p><p>${currentProjStack}</p>
+  <p>Посмотреть проект на github: <a style="border-radius: 5px; background-color: #c0cbff; padding: 3px; text-decoration: none" 
+  href=${portfolioProjData.gitRepo}>Перейти</a></a></p>`;
 
 // Открытие карточки в портфолио
 const portfolioTab = document.querySelector(".tab-2");

@@ -21,11 +21,18 @@ export const portfolioData = [
   {
     id: "01",
     title: "Диплом",
-    stack: ["React", "React Router", "Bootstrap5"],
+    stack: [
+      "React",
+      "React Router",
+      "Bootstrap5",
+      "ESLint",
+      "Node.js",
+      "Адаптивная верстка",
+      "SPA",
+    ],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-diplom",
-    // заменить картинки
     img: [DIPLOM_1, DIPLOM_2, DIPLOM_3, DIPLOM_4, DIPLOM_5],
     gitRepo: "https://github.com/ann4ann/Task-Tracker",
   },
@@ -38,6 +45,8 @@ export const portfolioData = [
       "Работа в команде",
       "Teamlead",
       "Bootstrap5",
+      "ESLint",
+      "Node.js",
     ],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
@@ -58,7 +67,7 @@ export const portfolioData = [
   {
     id: "04",
     title: "Верстка сайта магазина",
-    stack: ["HTML5", "SCSS", "Gulp"],
+    stack: ["HTML5", "SCSS", "Gulp", "Верстка по макету", "Figma"],
     content:
       "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
     imgName: "img-clerksy",
@@ -66,3 +75,18 @@ export const portfolioData = [
     gitRepo: "https://github.com/ann4ann/Clerksy_landing",
   },
 ];
+
+export const portfolioProjData = {
+  title: "сайт-портфолио",
+  stack: [
+    "HTML5",
+    "SCSS",
+    "Git",
+    "Webpack",
+    "Native JS",
+    "Media Queries",
+    "БЭМ именование",
+    "Node.js",
+  ],
+  gitRepo: "https://github.com/ann4ann/MyPortfolio2022",
+};
