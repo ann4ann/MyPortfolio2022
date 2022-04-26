@@ -6,7 +6,6 @@ export function createModal(id, data) {
   const container = document.querySelector(".tab-2__modal");
   const modal = document.createElement("div");
   modal.className = "modal-overlay";
-  // <img class="slide__img" src=${currentCardData.img[0]}></img>
   modal.innerHTML = `<div class="modal-window">
         <div class="modal-window__header modal-header">
           <span class="modal-header__title">${currentCardData.title}</span>

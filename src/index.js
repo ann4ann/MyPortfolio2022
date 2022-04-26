@@ -46,7 +46,7 @@ portfolioData.forEach((item) => {
   );
 });
 
-// Текущий проект
+// Пара слов про текущий проект
 const currentProj = document.querySelector(".tab-2__currentProj");
 let currentProjStack = "";
 portfolioProjData.stack.forEach(
@@ -57,7 +57,7 @@ currentProj.style.maxWidth = "80%";
 currentProj.style.margin = "0 auto";
 currentProj.innerHTML = `<p>Также в качестве примера моих работ можно рассматривать и этот ${portfolioProjData.title}.</p>
   <p>В данном проекте были использованы следующие технологии: </p><p>${currentProjStack}</p>
-  <p>Посмотреть проект на github: <a style="border-radius: 5px; background-color: #c0cbff; padding: 3px; text-decoration: none" 
+  <p>Посмотреть проект этого сайта на github: <a style="border-radius: 5px; background-color: #c0cbff; padding: 3px; text-decoration: none" 
   href=${portfolioProjData.gitRepo}>Перейти</a></a></p>`;
 
 // Открытие карточки в портфолио

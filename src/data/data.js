@@ -1,3 +1,4 @@
+// Диплом
 import DIPLOM_1 from "../../assets/img/TaskTracker/taskTracker01.png";
 import DIPLOM_2 from "../../assets/img/TaskTracker/taskTracker02.png";
 import DIPLOM_3 from "../../assets/img/TaskTracker/taskTracker03.png";
@@ -20,25 +21,25 @@ import CLERKSY_4 from "../../assets/img/Clerksy/Clerksy04.png";
 export const portfolioData = [
   {
     id: "01",
-    title: "Диплом",
+    title: "SPA списка дел на React (дипломная работа)",
     stack: [
       "React",
       "React Router",
       "Bootstrap5",
       "ESLint",
-      "Node.js",
+      "npm",
       "Адаптивная верстка",
       "SPA",
     ],
     content:
-      "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
+      "SPA органайзера задач на React, с возможностью регистрации, добавления задач, целей и контролем времени выполнения задачи.",
     imgName: "img-diplom",
     img: [DIPLOM_1, DIPLOM_2, DIPLOM_3, DIPLOM_4, DIPLOM_5],
     gitRepo: "https://github.com/ann4ann/Task-Tracker",
   },
   {
     id: "02",
-    title: "Хакатон 2",
+    title: "SPA участников команды на React (хакатон)",
     stack: [
       "React",
       "React Router",
@@ -46,20 +47,20 @@ export const portfolioData = [
       "Teamlead",
       "Bootstrap5",
       "ESLint",
-      "Node.js",
+      "npm",
     ],
     content:
-      "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
+      "Проект команды для хакатона, посященному созданию SPA на React. Задачи: реализация страницы команды, созадние компонентов React, организация структуры проекта и настройка, deploy и публикация проекта на github pages, организация эффективной работы команды.",
     imgName: "img-hackathon2",
     img: [HACK_2_3, HACK_2_1, HACK_2_2],
     gitRepo: "https://github.com/ann4ann/Hackathon_Members-presentation",
   },
   {
     id: "03",
-    title: "Хакатон 1",
+    title: "Создание кастомного контекст-меню (хакатон)",
     stack: ["JavaScript", "Native JS", "Работа в команде"],
     content:
-      "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
+      "Проект команды для хакатона, посященному использованию нативного JavaScript. Задачи: создание кастомного контекстного меню, решение простых задач с помощью JavaScript.",
     imgName: "img-hackathon1",
     img: [HACK_1_2, HACK_1_1, HACK_1_3],
     gitRepo: "https://github.com/semi4ka/01-hackathon",
@@ -69,7 +70,7 @@ export const portfolioData = [
     title: "Верстка сайта магазина",
     stack: ["HTML5", "SCSS", "Gulp", "Верстка по макету", "Figma"],
     content:
-      "Описание описание явчлмо двыа рдлыорывар дывлоа бялрвабяы ябыоал рылярбаляырабыоряао рыапожыва опждо авыждл ожыла ожывдл оажфыдл оажлдвофыжадл оыжвдлао ывжлдоа ыжло жыло ажывдло жфыдоа ждыо барялоыр абяыовлраб явбочрвадябылаоь чьорабыловяать биоябывботб",
+      "Верска статичного сайта (landing page) по макету figma. Задачи проекта: освоение верстки наиболее часто используемых элементов в проекте (tabs, поля ввода, карточики, footer).",
     imgName: "img-clerksy",
     img: [CLERKSY_1, CLERKSY_2, CLERKSY_3, CLERKSY_4],
     gitRepo: "https://github.com/ann4ann/Clerksy_landing",
@@ -86,7 +87,7 @@ export const portfolioProjData = {
     "Native JS",
     "Media Queries",
     "БЭМ именование",
-    "Node.js",
+    "npm",
   ],
   gitRepo: "https://github.com/ann4ann/MyPortfolio2022",
 };
