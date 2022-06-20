@@ -1,6 +1,10 @@
 import "normalize.css";
 import "./styles/scss/index.scss";
-import { portfolioData, portfolioProjData } from "./data/data";
+import {
+  newTaskTrackerProjData,
+  portfolioData,
+  portfolioProjData,
+} from "./data/data";
 import { addPortfolioCard } from "./components/addPortfolioCard";
 import { createModal, deleteModal } from "./components/modalWindow";
 
@@ -46,18 +50,38 @@ portfolioData.forEach((item) => {
   );
 });
 
-// Пара слов про текущий проект
+// Пара слов про текущий проект Таск-трекер
+const newTaskTracker = document.querySelector(".tab-2__newTaskTracker");
+let newTaskTrackerStack = "";
+newTaskTrackerProjData.stack.forEach(
+  (item) =>
+    (newTaskTrackerStack += `<span style="display: inline-block; border-radius: 5px; border: 1px solid gray; margin: 3px; padding: 3px">${item}</span>`)
+);
+// newTaskTracker.style.maxWidth = "80%";
+newTaskTracker.style.margin = "0 auto";
+newTaskTracker.style.paddingTop = "10px"
+newTaskTracker.innerHTML = `<p>Сейчас у меня в работе ${newTaskTrackerProjData.title}.</p>
+  <p>В данном проекте используются следующие технологии: </p><p>${newTaskTrackerStack}</p>`;
+const videoContainer = document.createElement("video");
+videoContainer.className = "video";
+videoContainer.style.maxWidth = "100%";
+videoContainer.controls = true;
+const videoSource = document.createElement("source");
+videoSource.src = newTaskTrackerProjData.video;
+videoSource.type = "video/webm";
+videoContainer.append(videoSource);
+newTaskTracker.prepend(videoContainer);
+
+// Пара слов про текущий проект резюме
 const currentProj = document.querySelector(".tab-2__currentProj");
 let currentProjStack = "";
 portfolioProjData.stack.forEach(
   (item) =>
-    (currentProjStack += `<span style="border-radius: 5px; border: 1px solid gray; margin: 3px; padding: 3px">${item}</span>`)
+    (currentProjStack += `<span style="display: inline-block; border-radius: 5px; border: 1px solid gray; margin: 3px; padding: 3px">${item}</span>`)
 );
-currentProj.style.maxWidth = "80%";
-currentProj.style.margin = "0 auto";
 currentProj.innerHTML = `<p>Также в качестве примера моих работ можно рассматривать и этот ${portfolioProjData.title}.</p>
   <p>В данном проекте были использованы следующие технологии: </p><p>${currentProjStack}</p>
-  <p>Посмотреть проект этого сайта на github: <a style="border-radius: 5px; background-color: #c0cbff; padding: 3px; text-decoration: none" 
+  <p>Посмотреть проект этого сайта на github: <a style="display: inline-block; border-radius: 5px; background-color: #c0cbff; padding: 3px; text-decoration: none" 
   href=${portfolioProjData.gitRepo}>Перейти</a></a></p>`;
 
 // Открытие карточки в портфолио

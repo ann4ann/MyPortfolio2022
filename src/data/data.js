@@ -18,6 +18,9 @@ import CLERKSY_2 from "../../assets/img/Clerksy/Clerksy02.png";
 import CLERKSY_3 from "../../assets/img/Clerksy/Clerksy03.png";
 import CLERKSY_4 from "../../assets/img/Clerksy/Clerksy04.png";
 
+// Видео
+import TT_video from "../../assets/video/TaskTracker.webm";
+
 export const portfolioData = [
   {
     id: "01",
@@ -90,4 +93,11 @@ export const portfolioProjData = {
     "npm",
   ],
   gitRepo: "https://github.com/ann4ann/MyPortfolio2022",
+};
+
+export const newTaskTrackerProjData = {
+  title: "таск-трекер",
+  stack: ["HTML5", "SCSS", "React", "Redux toolkit", "Mongo DB", "Express", "Axios"],
+  gitRepo: "https://github.com/ann4ann/MyPortfolio2022",
+  video: TT_video,
 };

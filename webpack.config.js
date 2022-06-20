@@ -58,7 +58,7 @@ module.exports = {
       // },
       // картинки
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg|webm)$/i,
         type: "asset/resource",
       },
 
